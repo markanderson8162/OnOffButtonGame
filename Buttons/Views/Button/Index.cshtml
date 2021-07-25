@@ -1,0 +1,44 @@
+﻿@model List<Buttons.Models.ButtonModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div> 
+        <h1>The Buttons Page</h1>
+        @Html.Label("Playing with buttons")
+        @using (Html.BeginForm("HandleButtonClick", "Button"))
+			{
+
+        for (int i = 0; i < Model.Count; i++) 
+        {
+            if(i % 5 == 0)
+				{
+                    <br/>
+				    }
+            <button type ="submit" name="mine" value=@i>
+                @if(Model[i].State == true)
+                {
+                    <img src="~/Images/on.png" />
+                }
+                else
+                {
+                    <img src="~/Images/off.png" />
+                }
+             </button>
+        }
+			}
+
+
+    </div>
+</body>
+</html>
