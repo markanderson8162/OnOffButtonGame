@@ -9,6 +9,8 @@ namespace Buttons.Controllers
 {
     public class ButtonController : Controller
     {
+        //TODO add database for users and high score
+
         static List<ButtonModel> buttons = new List<ButtonModel>();
         Random random = new Random();
         public ActionResult Index()
